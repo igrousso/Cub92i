@@ -6,7 +6,7 @@
 /*   By: igrousso <igrousso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 08:20:44 by igrousso          #+#    #+#             */
-/*   Updated: 2025/09/09 00:27:27 by igrousso         ###   ########.fr       */
+/*   Updated: 2025/09/18 16:43:11 by igrousso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int						start_of_map(int fd, char **line);
 int						count_size(int fd, int *col);
 int						ctoi(char c, int *count);
 int						encode_rgb(int r, int g, int b);
-void					fill_rgb(char **str, t_map *map, char c);
+int						fill_rgb(char **str, t_map *map, char c);
 
 /* map */
 
@@ -113,6 +113,7 @@ int						parsing(char *av, t_map *map);
 int						ctoi2(char c);
 void					count_collectible(char c, t_map *map);
 int						check_doors(t_map *map, int x, int y);
+int						count_post_row(int **map, int row);
 
 /*	load textures */
 

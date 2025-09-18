@@ -6,7 +6,7 @@
 /*   By: igrousso <igrousso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 11:45:35 by nmartin           #+#    #+#             */
-/*   Updated: 2025/09/17 15:54:49 by igrousso         ###   ########.fr       */
+/*   Updated: 2025/09/18 16:24:25 by igrousso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ int	resize_map(t_map *map)
 
 	pre_empty_col = count_pre_col(map->map);
 	post_empty_col = count_post_col(map->map, map->col + 2);
+	map->row = count_post_row(map->map, map->row + 1);
 	map->col = map->col + 4 - post_empty_col - pre_empty_col;
 	newmap = ft_calloc((map->row + 3), sizeof(int *));
 	if (!newmap)

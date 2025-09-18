@@ -6,7 +6,7 @@
 /*   By: igrousso <igrousso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:43:53 by igrousso          #+#    #+#             */
-/*   Updated: 2025/09/17 15:17:37 by igrousso         ###   ########.fr       */
+/*   Updated: 2025/09/18 16:47:06 by igrousso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	encode_rgb(int r, int g, int b)
 	return (r << 16 | g << 8 | b);
 }
 
-void	fill_rgb(char **str, t_map *map, char c)
+int	fill_rgb(char **str, t_map *map, char c)
 {
 	int	r;
 	int	g;
@@ -96,6 +96,9 @@ void	fill_rgb(char **str, t_map *map, char c)
 	r = ft_atoi(str[0]);
 	g = ft_atoi(str[1]);
 	b = ft_atoi(str[2]);
+	ft_free_tab(str);
+	if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255)
+		return (write(2, "Error\nRGB value must be between 0 and 255\n", 42));
 	if (c == 'C')
 	{
 		if (r == 0 && g == 0 && b == 0)
@@ -109,4 +112,5 @@ void	fill_rgb(char **str, t_map *map, char c)
 	}
 	if (c == 'F')
 		map->f_rgb = encode_rgb(r, g, b);
+	return (0);
 }

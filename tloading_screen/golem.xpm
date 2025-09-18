@@ -2,7 +2,7 @@
 static char *golem[] = {
 /* columns rows colors chars-per-pixel */
 "1920 1080 235 2 ",
-"   c #000000",
+"   c black",
 ".  c #090707",
 "X  c #060807",
 "o  c #080A07",

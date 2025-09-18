@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   texture.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmartin <nmartin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: igrousso <igrousso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 12:40:24 by igrousso          #+#    #+#             */
-/*   Updated: 2025/09/08 16:29:30 by nmartin          ###   ########.fr       */
+/*   Updated: 2025/09/18 16:45:10 by igrousso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,7 @@ int	fill_colors(char *line, t_map *map, char c, char *tmp)
 	if (!str[0] || !str[1] || !str[2] || check_colors(str))
 		return (free(tmp), ft_free_tab(str), \
 					write(2, "Error\nInvalid color syntaxe\n", 28));
-	fill_rgb(str, map, c);
-	return (free(tmp), ft_free_tab(str), 0);
+	return (free(tmp), fill_rgb(str, map, c));
 }
 
 int	fill_textures(char *line, t_map *map, int *count, char *tmp)
