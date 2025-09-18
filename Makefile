@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nmartin <nmartin@student.42.fr>            +#+  +:+       +#+         #
+#    By: igrousso <igrousso@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/05 15:41:03 by nmartin           #+#    #+#              #
-#    Updated: 2025/09/17 17:14:32 by nmartin          ###   ########.fr        #
+#    Updated: 2025/09/18 15:52:59 by igrousso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ BLUE = \033[34m
 RESET = \033[0m
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -MMD -MP -O2 -g
+CFLAGS = -Wall -Werror -Wextra -MMD -MP -O2
 MLXFLAGS = -Lminilibx-linux -lmlx_Linux -lX11 -lXext -lXfixes -lm
 NAME = cub3d
 CUB_PATH = ./cub/
